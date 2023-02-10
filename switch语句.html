@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>switch案例</title>
+    <script>
+        function judgePrice() {
+            var input = document.getElementById("demo01").value;
+
+            var answer = null;
+            switch (true) {
+                case input >= 200:
+                    answer = input - 10
+                    break;
+
+                case input >= 100 && input < 200:
+                    answer = input - 5
+                    break;
+
+                case input >= 50 && input < 200:
+                    answer = input - 3
+                    break;
+                default: answer = input
+                    break;
+            }
+
+            document.getElementById("answer01").innerHTML = answer;
+        }
+
+        function judgeGrade() {
+            var input = document.getElementById("demo02").value;
+
+            var answer = null;
+
+            switch (true) {
+                case input >= 90 && input <= 100:
+                    answer = "A"
+                    break;
+                case input >= 80 && input < 90:
+                    answer = "B"
+                    break;
+                case input >= 70 && input < 80:
+                    answer = "C"
+                    break;
+                case input >= 60 && input < 70:
+                    answer = "D"
+                    break;
+                case input >= 0 && input < 60:
+                    answer = "E"
+                    break;
+                default:
+                    answer = "成绩错误"
+                    break;
+
+            }
+
+
+            document.getElementById("answer02").innerHTML = answer;
+        }
+
+
+        function judgeYear() {
+            var input = document.getElementById("demo03").value;
+
+            var answer = null;
+
+            switch (Number(input)) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 11:
+                    answer = "31天"
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 10:
+                case 12:
+                    answer = "30天"
+                    break;
+                case 2:
+                    answer = "28天"
+                    break;
+                default:
+                    answer = "错误月份"
+                    break;
+            }
+
+            document.getElementById("answer03").innerHTML = answer;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>优惠计算</h1>
+    <div>满200减10 满100减5 满50减3 </div>
+    <input type="number" id="demo01">
+    <button type="button" onclick="judgePrice()">计算优惠</button>
+    <div>结果：</div>
+    <p id="answer01"></p>
+
+
+    <h1>成绩输出</h1>
+    <input type="number" id="demo02">
+    <button type="button" onclick="judgeGrade()">输出成绩</button>
+    <div>结果：</div>
+    <p id="answer02"></p>
+
+    <h1>输入月份求天数（不计闰年）</h1>
+    <input type="number" id="demo03">
+    <button type="button" onclick="judgeYear()">输出天数</button>
+    <div>结果：</div>
+    <p id="answer03"></p>
+
+</body>
+
+</html>

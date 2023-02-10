@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>for案例</title>
+    <script>
+        function countYear() {
+
+            var answer = new Array();
+            for (var n = 1000; n <= 2000; n+=4) {
+                if (n % 400 === 0 || n % 4 === 0 && n % 100 != 0) {
+                    answer.push(n)
+                }
+            }
+            document.getElementById("answer01").innerText = answer;
+        }
+
+        function computedNN() {
+            var input = Number(document.getElementById("demo02").value);
+            var answer = 1;
+            while (input > 0) {
+                answer *= input
+                input--
+            }
+            document.getElementById("answer02").innerHTML = answer;
+        }
+
+        function doWhileTest() {
+            do {
+                var res = prompt("请输入数据")
+            } while (!res)
+            document.getElementById("answer03").innerHTML = res;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>求1000~2000所有闰年</h1>
+    <button type="button" onclick="countYear()">计算</button>
+    <div>结果：
+        <textarea style=" width: 600px;
+        height: 300px;
+        resize: none;" id="answer01"></textarea>
+    </div>
+
+</body>
+
+</html>

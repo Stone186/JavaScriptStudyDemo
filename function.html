@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>function案例</title>
+
+    <script>
+        function queryPrime(number) {
+            var iszhishu = false
+            for (var i = 2; i <= number / 2; i++) {
+                if (number % i === 0) {
+                    iszhishu = true
+                    break
+                }
+            }
+            if (iszhishu || i <= number / 2)
+                document.getElementById("answer01").innerText = "不是质数";
+            else
+                document.getElementById("answer01").innerText = "是质数";
+        }
+        function queryPrimeWith(){
+            // alert(document.getElementById("demo01").value)
+            queryPrime(document.getElementById("demo01").value)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>求质数</h1>
+    <input type="number" id="demo01">
+    <button type="button" onclick="queryPrimeWith()">计算</button>
+    <div>结果：<p id="answer01"></p>
+    </div>
+
+    <script type="text/javascript">
+
+        function test(number) {
+            //未传值默认值
+            //建议或提示
+            if (number === undefined) {
+                alert("请传入参数")
+                // console.error("请传入参数")
+                // number = 9
+            }
+            for (var m = 1; m <= number; m++) {
+                for (var n = 1; n <= m; n++) {
+                    document.write("<span>  " + m + "*" + n + "=" + m * n + "</span>  ")
+                }
+                document.write("<br>")
+            }
+            return null;//函数返回值
+        }
+        test(9)
+        test(6)
+        // test()
+    </script>
+</body>

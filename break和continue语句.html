@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>break和continue案例</title>
+    <script>
+        function queryPrime() {
+            var input = Number(document.getElementById("demo01").value);
+            var iszhishu = false
+            for (var i = 2; i <= input / 2; i++) {
+                if (input % i === 0) {
+                    iszhishu = true
+                    break
+                }
+            }
+            if (iszhishu || i <= input / 2)
+                document.getElementById("answer01").innerText = "不是质数";
+            else
+                document.getElementById("answer01").innerText = "是质数";
+
+        }
+    </script>
+    <style>
+        span{
+            display: inline;
+            width: 200px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>求质数</h1>
+    <input type="number" id="demo01">
+    <button type="button" onclick="queryPrime()">计算</button>
+    <div>结果：<p id="answer01"></p>
+    </div>
+
+    <h1>9×9乘法表</h1>
+        <script type="text/javascript">
+            for (var m = 1; m <= 9; m++) {
+                for (var n = 1; n <= m; n++) {
+                    document.write("<span>  " + m + "*" + n +"="+m*n+ "</span>  ")
+                }
+                document.write("<br>")
+            }
+        </script>
+</body>

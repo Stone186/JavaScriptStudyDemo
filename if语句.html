@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>if案例</title>
+    <script>
+        function judgeNumber() {
+            var input = document.getElementById("demo01").value;
+
+            var answer = null;
+            if (input % 2 === 0) {
+                answer = "偶数"
+            }
+            else if (input % 2 === 1) {
+                answer = "奇数"
+            }
+
+            document.getElementById("answer01").innerHTML = answer;
+        }
+
+        function judgeGrade() {
+            var input = document.getElementById("demo02").value;
+
+            var answer = null;
+            if (input >= 90 && input <= 100) {
+                answer = "A"
+            }
+            else if (input >= 80) {
+                answer = "B"
+            }
+            else if (input >= 70) {
+                answer = "C"
+            }
+            else if (input >= 60) {
+                answer = "D"
+            }
+            else if (input >= 0) {
+                answer = "E"
+            }
+
+            document.getElementById("answer02").innerHTML = answer;
+        }
+
+
+        function judgeYear() {
+            var input = document.getElementById("demo03").value;
+
+            var answer = null;
+            if (input % 400 === 0) {
+                answer = "世纪闰年"
+            }
+            else if (input % 4 === 0 && input % 100 != 0) {
+                answer = "普通闰年"
+            }
+            else answer = "不是闰年"
+
+            document.getElementById("answer03").innerHTML = answer;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>判断奇数偶数</h1>
+    <input type="number" id="demo01">
+    <button type="button" onclick="judgeNumber()">判断奇偶</button>
+    <div>结果：</div>
+    <p id="answer01"></p>
+
+
+    <h1>成绩输出</h1>
+    <input type="number" id="demo02">
+    <button type="button" onclick="judgeGrade()">输出成绩</button>
+    <div>结果：</div>
+    <p id="answer02"></p>
+
+    <h1>判断闰年</h1>
+    <input type="number" id="demo03">
+    <button type="button" onclick="judgeYear()">判断闰年</button>
+    <div>结果：</div>
+    <p id="answer03"></p>
+
+</body>
+
+</html>
